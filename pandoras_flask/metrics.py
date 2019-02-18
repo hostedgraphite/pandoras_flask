@@ -47,7 +47,9 @@ CONTENT_TYPE_LATEST = str('text/plain; version=0.0.4; charset=utf-8')
 
 def setup(app):
     app.before_request(start_timer)
-    # The order here matters since we want stop_timer to be executed first
+
+    # `after_request` functions are executed in the reverse of the order
+    # they were added. We want `stop_timer` to be executed first.
     app.after_request(record_request_data)
     app.after_request(stop_timer)
 
