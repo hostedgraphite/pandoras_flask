@@ -1,0 +1,10 @@
+#!/bin/bash
+# Start the "stack" - nginx + uwsgi running our Flask app.
+# We run `nginx` in the foreground and pull everything down after CTRL-C
+
+. venv/bin/activate
+
+uwsgi conf/uwsgi.ini &
+uwsgi_pid=$!
+nginx -c conf/nginx.conf -p ${PWD}
+kill ${uwsgi_pid}
