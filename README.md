@@ -22,6 +22,9 @@ Which will start the app running under `nginx` + `uwsgi`.
 You can then visit https://localhost:8040/ and look around, or CTRL-C to bring
 everything down again.
 
+Once everything's running, you can point a test Prometheus at
+https://localhost:9040/metrics to scrape the monitoring data.
+
 Directory layout:
 * `bin/` - some helper scripts;
 * `conf/` - `nginx` and `uwsgi` configuration;
