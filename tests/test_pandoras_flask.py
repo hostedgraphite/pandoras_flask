@@ -11,6 +11,9 @@ class TestPandorasFlask(unittest.TestCase):
     def setUp(self):
         self.client = app.ping_app.test_client()
 
+        # Ensure metrics are initialized by making a call prior to tests.
+        self.client.get('/ping')
+
     def tearDown(self):
         pass
 
