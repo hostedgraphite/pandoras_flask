@@ -2,7 +2,13 @@ version: 2
 jobs:
   build:
     docker:
-      - image: hostedgraphite/pythonbuild:2venv
+      - image: hostedgraphite/pythonbuild:hgapp_dep_xenial
+    environment:
+      CIRCLE_ARTIFACTS: /tmp/artifacts
     steps:
       - checkout
+      - run: mkdir -p $CIRCLE_ARTIFACTS
       - run: make test
+      - run: cp -r cover $CIRCLE_ARTIFACTS
+      - store_artifacts:
+          path: /tmp/artifacts
