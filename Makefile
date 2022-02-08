@@ -7,6 +7,9 @@ help:
 run: setup
 	( . venv/bin/activate && bin/run_demo )
 
+lint:
+	flake8
+
 test:
 	tox
 
