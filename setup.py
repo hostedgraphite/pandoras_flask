@@ -6,9 +6,9 @@ except ImportError:
     from distutils.core import setup
 
 requirements = [
-    'prometheus_client==0.5.0',
-    'uwsgi==2.0.18',
-    'Flask==1.1.1',
+    'prometheus_client<=0.13.1',
+    'uwsgi<=2.0.20',
+    'Flask<=2.0.2',
 ]
 
 setup(
