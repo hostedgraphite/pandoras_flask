@@ -5,3 +5,6 @@ venv/
 access.log
 *.egg-info/
 *.pyc
+
+# JetBrains
+.idea

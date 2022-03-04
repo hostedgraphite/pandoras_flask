@@ -7,8 +7,14 @@ help:
 run: setup
 	( . venv/bin/activate && bin/run_demo )
 
+lint:
+	flake8
+
 test:
 	tox
+
+install:
+	pip install -r requirements.txt
 
 clean: clean-build clean-pyc
 

@@ -1,5 +1,5 @@
 import flask
-import metrics
+from pandoras_flask import metrics
 
 ping_app = flask.Flask(__name__)
 metrics.setup(ping_app)

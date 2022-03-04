@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 import unittest
@@ -20,9 +20,9 @@ class TestPandorasFlask(unittest.TestCase):
     def test_ping(self):
         rp = self.client.get('/ping')
         self.assertEqual(rp.status_code, 200)
-        self.assertEqual(rp.get_data(), 'Pong')
+        self.assertEqual('Pong', rp.get_data().decode())
 
     def test_metrics(self):
         rp = self.client.get('/metrics')
         self.assertEqual(rp.status_code, 200)
-        self.assertIn('request_count_total', rp.get_data())
+        self.assertIn('request_count_total', rp.get_data().decode())
