@@ -8,6 +8,7 @@ jobs:
     steps:
       - checkout
       - run: mkdir -p $CIRCLE_ARTIFACTS
+      - run: make install
       - run: make lint
       - run: make test
       - run: cp -r cover $CIRCLE_ARTIFACTS

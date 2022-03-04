@@ -13,6 +13,9 @@ lint:
 test:
 	tox
 
+install:
+	pip install -r requirements.txt
+
 clean: clean-build clean-pyc
 
 distclean: clean clean-test clean-run
