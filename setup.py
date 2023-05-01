@@ -8,7 +8,7 @@ except ImportError:
 requirements = [
     'prometheus_client==0.5.0',
     'uwsgi==2.0.18',
-    'Flask==1.1.1',
+    'Flask==2.3.2',
 ]
 
 setup(
