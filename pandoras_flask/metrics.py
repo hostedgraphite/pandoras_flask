@@ -9,10 +9,9 @@ from prometheus_client import multiprocess, Counter, Histogram
 registry = prometheus_client.CollectorRegistry()
 multiprocess.MultiProcessCollector(registry)
 
-# Metrics for the `app` module - reads & writes
-
-PING_RESPONSE = Counter('ping_response',
-                        '/ping response codes', ['code'])
+# # Metrics for the `app` module - reads & writes
+# PING_RESPONSE = Counter('ping_response',
+#                         '/ping response codes', ['code'])
 
 # Middleware / setup
 # Following the Flask multiprocessing example in
