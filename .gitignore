@@ -1,7 +1,9 @@
 .coverage
 .tox/
-cover/
-venv/
-access.log
+.venv/
 *.egg-info/
+*.pid
 *.pyc
+access.log
+build/
+cover/

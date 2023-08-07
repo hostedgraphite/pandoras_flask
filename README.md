@@ -6,16 +6,18 @@ in the common `nginx` + `uwsgi` + `Flask` stack.
 See the [related blog post](https://www.hostedgraphite.com/blog).
 
 You'll need:
-* `nginx` for your platform (we used 1.14.0);
+* `nginx` for your platform (`brew install nginx`);
 * Python development libraries to build `uWSGI`;
 * [virtualenv](https://virtualenv.pypa.io/en/latest/) to build in.
 
 If you want to `make test`, you'll need
-[tox](https://tox.readthedocs.io/en/latest/) as well (we used 2.5.0).
+[tox](https://tox.readthedocs.io/en/latest/) as well.
 
 Then you should be able to get going with
 
     make run
+
+(If you face error a library could not be found, try runnning `./bin/fix_macos_lib_reference`)
 
 Which will start the app running under `nginx` + `uwsgi`.
 

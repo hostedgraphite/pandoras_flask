@@ -9,9 +9,11 @@
 #        Parent directory is assumed to exist.
 set -ex
 
+GROUP="$(groups | cut -f1 -d' ')"
+
 path="${1:?'usage: clear_prometheus_multiproc <path> [user] [group] [mode]'}"
 user="${2:-${USER}}"
-group="${3:-${USER}}"
+group="${3:-${GROUP}}"
 mode="${4:-755}"
 
 rm -Rf ${path}

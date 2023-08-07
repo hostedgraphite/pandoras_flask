@@ -1,0 +1,10 @@
+#!/bin/bash
+
+UWSGI_EXEC=.venv/bin/uwsgi
+
+install_name_tool -change \
+    @rpath/Python3.framework/Versions/3.9/Python3 \  # old ref
+    /Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/libpython3.9.dylib \  # new ref
+    "$UWSGI_EXEC"  # file to update
+codesign -f -s - "$UWSGI_EXEC"
+

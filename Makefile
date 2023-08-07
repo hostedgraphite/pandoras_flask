@@ -5,7 +5,7 @@ help:
 	@echo "distclean - clean up all artifacts for distribution"
 
 run: setup
-	( . venv/bin/activate && bin/run_demo )
+	( . .venv/bin/activate && PYTHONPATH=pandoras_flask bin/run_demo )
 
 test:
 	tox
@@ -15,10 +15,16 @@ clean: clean-build clean-pyc
 distclean: clean clean-test clean-run
 
 venv:
-	virtualenv ./venv
+	virtualenv --python py39 .venv
+
+start-nginx:
+	brew services reload nginx
+
+stop-nginx:
+	brew services stop nginx
 
 setup: venv
-	( . venv/bin/activate && pip install . )
+	( . .venv/bin/activate && pip install -r requirements.txt )
 
 clean-build:
 	rm -fr deb_dist
@@ -40,7 +46,7 @@ clean-test:
 
 clean-run:
 	rm -f *.log
-	rm -fr venv
+	rm -fr .venv
 	rm -fr .tox
 
 .PHONY: help run test clean distclean setup clean-build clean-pyc clean-test clean-run
