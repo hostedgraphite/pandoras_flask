@@ -13,7 +13,7 @@ requirements = [
 
 setup(
     name='pandoras_flask',
-    version='1.0.1',
+    version='1.0.2',
     description='Flask app with Prometheus monitoring',
     long_description='Worked example of integrating Prometheus monitoring with a Flask app',
     url='https://github.com/metricfire/pandoras_flask',
